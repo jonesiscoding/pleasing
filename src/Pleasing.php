@@ -15,7 +15,7 @@ use XQ\Pleasing\Assetic\Filter\PleasingMinifyFilter;
  * Class Pleasing
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v1.2.8 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v1.3.09 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing

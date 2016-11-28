@@ -15,7 +15,7 @@ use JShrink\Minifier;
  * Class PleasingMinifyFilter
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing Filters v1.2.7 (https://github.com/exactquery/pleasing-filters)
+ * @version Pleasing Filters v1.3.0 (https://github.com/exactquery/pleasing-filters)
  * @license MIT (https://github.com/exactquery/pleasing-filters/blob/master/LICENSE)
  *
  * @package XQ\Pleasing\Assetic\Filter
