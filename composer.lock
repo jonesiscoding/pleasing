@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a2fa5fbf05c06a622f43b6529fe522fa",
-    "content-hash": "4f844d3f9a048abd2763e588fbff86fa",
+    "hash": "a1282fb3e1cf12a953d0461259c7c281",
+    "content-hash": "c34836c9a1f9bc8507100f7843e291ec",
     "packages": [
         {
             "name": "exactquery/xq-sassy",
-            "version": "1.0.6",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/exactquery/xq-sassy.git",
-                "reference": "f330bf0ed36574e6a38e3717ca2b718038db840e"
+                "reference": "32c258677ad03d3a73f79386c71def1f4a05f643"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/exactquery/xq-sassy/zipball/f330bf0ed36574e6a38e3717ca2b718038db840e",
-                "reference": "f330bf0ed36574e6a38e3717ca2b718038db840e",
+                "url": "https://api.github.com/repos/exactquery/xq-sassy/zipball/32c258677ad03d3a73f79386c71def1f4a05f643",
+                "reference": "32c258677ad03d3a73f79386c71def1f4a05f643",
                 "shasum": ""
             },
             "require": {
@@ -34,6 +34,9 @@
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
                     "name": "Aaron M Jones",
@@ -50,7 +53,7 @@
                 "sassc",
                 "scss"
             ],
-            "time": "2016-10-24 20:23:11"
+            "time": "2016-11-29 15:01:58"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -172,16 +175,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v3.1.7",
+            "version": "v3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94"
+                "reference": "02ea84847aad71be7e32056408bb19f3a616cdd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/66de154ae86b1a07001da9fbffd620206e4faf94",
-                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94",
+                "url": "https://api.github.com/repos/symfony/process/zipball/02ea84847aad71be7e32056408bb19f3a616cdd3",
+                "reference": "02ea84847aad71be7e32056408bb19f3a616cdd3",
                 "shasum": ""
             },
             "require": {
@@ -190,7 +193,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.1-dev"
+                    "dev-master": "3.2-dev"
                 }
             },
             "autoload": {
@@ -217,7 +220,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-29 14:13:09"
+            "time": "2016-11-24 10:40:28"
         },
         {
             "name": "tedivm/jshrink",
