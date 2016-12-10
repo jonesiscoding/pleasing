@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: amjones
- * Date: 10/31/16
- * Time: 1:15 PM
+ * SymfonyRenderTrait.php
  */
 
 namespace XQ\Pleasing;
@@ -16,7 +13,7 @@ use Symfony\Component\HttpFoundation as Http;
  * Class SymfonyRenderTrait
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v1.3.0 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v1.4.0 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing

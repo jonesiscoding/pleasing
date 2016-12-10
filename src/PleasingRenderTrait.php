@@ -10,7 +10,7 @@ namespace XQ\Pleasing;
  * Class PleasingRenderTrait
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v1.3.0 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v1.4.0 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing
@@ -121,7 +121,7 @@ trait PleasingRenderTrait
    *
    * @return mixed|string   Returns a string, unless using Symfony, then returns a Response object.
    */
-  public function render( $options )
+  public function renderAsset( $options )
   {
     $options = $this->resolveRenderOptions( $options );
 

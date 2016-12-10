@@ -15,7 +15,7 @@ use XQ\Pleasing\Assetic\Filter\PleasingMinifyFilter;
  * Class Pleasing
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v1.3.09 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v1.4.09 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing
@@ -61,7 +61,7 @@ class Pleasing
     // Set the Config Array (or Path)
     $this->_config = $config;
     // Set the Paths
-    $this->paths = $paths;
+    $this->_paths = $paths;
 
     if ( $this->env != "prod" )
     {
