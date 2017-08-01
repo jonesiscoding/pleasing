@@ -10,7 +10,7 @@ namespace XQ\Pleasing;
  * Class PleasingRenderTrait
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v1.4.0 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v1.4.1 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing
