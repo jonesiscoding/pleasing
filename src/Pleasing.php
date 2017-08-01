@@ -344,7 +344,7 @@ class Pleasing
 
     if ( $key )
     {
-      return ( array_key_exists( $key, $this->_config['pleasing'] ) ) ? $this->_config['pleasing'][ $key ] : null;
+      return ( array_key_exists( $key, $this->_config[ 'pleasing' ] ) ) ? $this->_config[ 'pleasing' ][ $key ] : null;
     }
     else
     {
@@ -374,10 +374,10 @@ class Pleasing
         /** @noinspection PhpUndefinedClassInspection */
         $value = sfYaml::load( $contents );
       }
-      elseif ( class_exists( "Symfony\\Component\\Yaml\\Parser" ) )
+      elseif ( class_exists( "\\Symfony\\Component\\Yaml\\Parser" ) )
       {
-        /** @noinspection PhpUndefinedClassInspection PhpUndefinedNamespaceInspection */
-        $yaml = new Symfony\Component\Yaml\Parser();
+        /** @noinspection PhpUnnecessaryFullyQualifiedNameInspection */
+        $yaml = new \Symfony\Component\Yaml\Parser();
         /** @noinspection PhpUndefinedMethodInspection */
         $value = $yaml->parse( $contents );
       }
@@ -522,19 +522,26 @@ class Pleasing
     $filtersConfig = $this->getConfig( 'filters' );
 
     // Add Filters By Extension
-    foreach ( $filtersConfig as $filterName => $filterConfig )
+    if( !empty( $filtersConfig ) )
     {
-      $applyTo = (isset($filterConfig['apply_to'])) ? $filterConfig['apply_to'] : null;
-      if ( $applyTo && preg_match( '#'.$applyTo.'#i', $input ) )
+      foreach ( $filtersConfig as $filterName => $filterConfig )
       {
-        $addFilters[] = $filterName;
+        $applyTo = (isset($filterConfig['apply_to'])) ? $filterConfig['apply_to'] : null;
+        if ( $applyTo && preg_match( '#'.$applyTo.'#i', $input ) )
+        {
+          $addFilters[] = $filterName;
+        }
+      }
+
+      // Build Filters
+      foreach ( $addFilters as $addFilter )
+      {
+        $filters[] = $this->getFilter( $addFilter );
       }
     }
-
-    // Build Filters
-    foreach ( $addFilters as $addFilter )
+    else
     {
-      $filters[] = $this->getFilter( $addFilter );
+      $filters = array();
     }
 
     return new FileAsset( $input, $filters );
