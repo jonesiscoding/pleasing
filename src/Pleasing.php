@@ -127,7 +127,7 @@ class Pleasing
   {
     if ( !$this->_FilterFactory )
     {
-      $this->_FilterFactory = new PleasingFilterFactory( $this->paths );
+      $this->_FilterFactory = new PleasingFilterFactory( $this->_paths );
     }
 
     return $this->_FilterFactory;
@@ -374,7 +374,7 @@ class Pleasing
         /** @noinspection PhpUndefinedClassInspection */
         $value = sfYaml::load( $contents );
       }
-      elseif ( class_exists( 'Symfony\Component\Yaml\Parser' ) )
+      elseif ( class_exists( "Symfony\\Component\\Yaml\\Parser" ) )
       {
         /** @noinspection PhpUndefinedClassInspection PhpUndefinedNamespaceInspection */
         $yaml = new Symfony\Component\Yaml\Parser();

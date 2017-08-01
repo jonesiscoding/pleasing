@@ -37,5 +37,8 @@
     "symfony/http-foundation": "For header responses with better error checking."
   },
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "require-dev": {
+    "symfony/yaml": "^3.3"
+  }
 }
