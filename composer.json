@@ -1,6 +1,6 @@
 {
   "name": "exactquery/pleasing",
-  "description": "Filters and a caching engine for Assetic.  Assists with minification & compiling of LESS, SASS, and JS assets.",
+  "description": "Caching engine for Assetic.  Assists with minification & compiling of LESS, SASS, and JS assets.",
   "keywords": [
       "sass",
       "scss",
@@ -13,7 +13,7 @@
       "css"
   ],
   "homepage": "https://www.github.com/exactquery/pleasing",
-  "version": "1.4.1",
+  "version": "1.5",
   "authors": [
       {
           "name": "Aaron M Jones",
@@ -30,7 +30,7 @@
       "kriswallsmith/assetic": "~1.3",
       "leafo/lessphp": "~0.5.0",
       "tedivm/jshrink": "~1.1",
-      "exactquery/xq-sassy": "~1.0"
+      "exactquery/pleasing-filters": "dev-master"
   },
   "suggest": {
     "leafo/scssphp": "Used as a backup to SASSC to compile SCSS.  Will function more slowly than sassc binary.",
@@ -39,6 +39,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require-dev": {
-    "symfony/yaml": "^3.3"
+    "symfony/yaml": "^3.3",
+    "symfony/http-foundation": "^3.3"
   }
 }
