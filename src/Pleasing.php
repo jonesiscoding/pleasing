@@ -8,14 +8,13 @@ namespace XQ\Pleasing;
 use Assetic\Filter\FilterInterface;
 use Assetic\Asset\FileAsset;
 use Assetic\Asset\AssetCollection;
-use XQ\Pleasing\Assetic\Filter\PleasingFilterFactory;
-use XQ\Pleasing\Assetic\Filter\PleasingMinifyFilter;
+use XQ\Pleasing\Filter\PleasingMinifyFilter;
 
 /**
  * Class Pleasing
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v1.4.19 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v1.5 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing
@@ -26,7 +25,7 @@ class Pleasing
   protected $env;
   /** @var array                    An array of important paths */
   protected $_paths;
-  /** @var  PleasingFilterFactory   An instance of this object, instantiated by Pleasing */
+  /** @var  PleasingFilterFactory  An instance of this object, instantiated by Pleasing */
   protected $_FilterFactory;
   /** @var  array                   An array of configuration values */
   protected $_config = array();
