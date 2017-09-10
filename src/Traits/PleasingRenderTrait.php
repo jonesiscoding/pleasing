@@ -3,7 +3,10 @@
  * PleasingRenderTrait.php
  */
 
-namespace XQ\Pleasing;
+namespace XQ\Pleasing\Traits;
+
+use XQ\Pleasing\Pleasing;
+
 /**
  * Uses the PHP header function to set the proper headers, then returns the contents of a CSS or JS file.
  *

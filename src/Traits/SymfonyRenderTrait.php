@@ -3,7 +3,7 @@
  * SymfonyRenderTrait.php
  */
 
-namespace XQ\Pleasing;
+namespace XQ\Pleasing\Traits;
 
 use Symfony\Component\HttpFoundation as Http;
 

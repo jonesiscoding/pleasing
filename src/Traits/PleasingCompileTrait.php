@@ -3,7 +3,9 @@
  * CompileTrait.php
  */
 
-namespace XQ\Pleasing;
+namespace XQ\Pleasing\Traits;
+
+use XQ\Pleasing\Pleasing;
 
 
 /**
