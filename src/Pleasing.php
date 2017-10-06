@@ -8,7 +8,6 @@ namespace XQ\Pleasing;
 use Assetic\Filter\FilterInterface;
 use Assetic\Asset\FileAsset;
 use Assetic\Asset\AssetCollection;
-use XQ\Pleasing\Filter\PleasingMinifyFilter;
 
 /**
  * Class Pleasing
@@ -442,7 +441,7 @@ class Pleasing
     }
 
     if (isset($collection) && !empty($collection)) {
-      $AssetCollection = $this->buildAssetCollection($collection, false);
+      $AssetCollection = $this->buildAssetCollection($collection, $assetBundle['output'],false);
 
       if ( $assetCode = $AssetCollection->dump() )
       {
@@ -511,39 +510,13 @@ class Pleasing
    * configured for this file type.
    *
    * @param string  $input        The fully resolved path to the asset input file.
-   * @param array   $addFilters   An array of filer names.
+   * @param array   $addFilters   An array of filter names to add to any filters configured for this file type.
    *
    * @return FileAsset            The Assetic FileAsset object.
    */
   public function buildFileAsset($input, $addFilters = array())
   {
-    $filters = array();
-    $filtersConfig = $this->getConfig( 'filters' );
-
-    // Add Filters By Extension
-    if( !empty( $filtersConfig ) )
-    {
-      foreach ( $filtersConfig as $filterName => $filterConfig )
-      {
-        $applyTo = (isset($filterConfig['apply_to'])) ? $filterConfig['apply_to'] : null;
-        if ( $applyTo && preg_match( '#'.$applyTo.'#i', $input ) )
-        {
-          $addFilters[] = $filterName;
-        }
-      }
-
-      // Build Filters
-      foreach ( $addFilters as $addFilter )
-      {
-        $filters[] = $this->getFilter( $addFilter );
-      }
-    }
-    else
-    {
-      $filters = array();
-    }
-
-    return new FileAsset( $input, $filters );
+    return new FileAsset( $input, $this->getFiltersForFile( $input, $addFilters ) );
   }
 
   /**
@@ -551,20 +524,80 @@ class Pleasing
    * minification if indicated.
    *
    * @param FileAsset[] $FileAssets   An array of FileAsset objects to place in the asset collection.
-   * @param bool        $minify       Whether or not to apply the minification filter to the AssetCollection.
+   * @param bool        $output       The output filename.  Relative path is optional.
+   * @param array       $addFilters   An array of filter names to add to any filters configured for this file type.
    *
    * @return AssetCollection          The Assetic AssetCollection object.
    */
-  public function buildAssetCollection( $FileAssets, $minify = true )
+  public function buildAssetCollection( $FileAssets, $output, $addFilters = array() )
   {
-    $minifyFilter = ( $minify ) ? array( new PleasingMinifyFilter() ) : array();
+    // BC Arguments -- will be removed in 3.0
+    if( is_bool( $output ) )
+    {
+      $filters[] = $this->getFilter( 'pleasing_minify' );
+    }
+    else
+    {
+      $filters = $this->getFiltersForFile( $output, $addFilters );
+    }
 
     if ( !is_array( $FileAssets ) )
     {
       $FileAssets = array( $FileAssets );
     }
 
-    return new AssetCollection( $FileAssets, $minifyFilter );
+    return new AssetCollection( $FileAssets, $filters );
+  }
+
+  /**
+   * Gets the appropriate filters configured for the file type of the given file.  Also adds any additional filters
+   * given by name in the $addFilters parameter.
+   *
+   * @param string $file        The file name.  Path is optional.
+   * @param array  $addFilters  An array of filter names to add to any filters configured for this file type.
+   *
+   * @return array
+   */
+  private function getFiltersForFile( $file, $addFilters = array() )
+  {
+    $filters = array();
+
+    $addFilters = array_unique(array_merge( $addFilters, $this->getFilterNames( $file ) ));
+    // Build Filters
+    foreach ( $addFilters as $addFilter )
+    {
+      $filters[] = $this->getFilter( $addFilter );
+    }
+
+    return $filters;
+  }
+
+  /**
+   * Gets the name of any filters configured to match the given filename, typically by extension.
+   *
+   * @param string $filename  The file name.  Path is optional.
+   *
+   * @return array
+   */
+  private function getFilterNames( $filename )
+  {
+    $addFilters = array();
+    $filtersConfig = $this->getConfig( 'filters' );
+
+    // Add Filters By Extension
+    if( !empty( $filtersConfig ) )
+    {
+      foreach( $filtersConfig as $filterName => $filterConfig )
+      {
+        $applyTo = ( isset( $filterConfig[ 'apply_to' ] ) ) ? $filterConfig[ 'apply_to' ] : null;
+        if( $applyTo && preg_match( '#' . $applyTo . '#i', $filename ) )
+        {
+          $addFilters[] = $filterName;
+        }
+      }
+    }
+
+    return $addFilters;
   }
 
   /**

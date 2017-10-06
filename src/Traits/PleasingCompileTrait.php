@@ -72,7 +72,8 @@ trait PleasingCompileTrait
       $collection[] = $this->Pleasing()->buildFileAsset($inputFilePath);
 
       if (isset($collection) && !empty($collection)) {
-        $AssetCollection = $this->Pleasing()->buildAssetCollection($collection, $minify);
+        $collectionFilters = ($minify) ? array('pleasing_minify') : array();
+        $AssetCollection = $this->Pleasing()->buildAssetCollection($collection, $outputFile, $collectionFilters);
 
         if ( $assetCode = $AssetCollection->dump() )
         {
