@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation as Http;
  * Class SymfonyRenderTrait
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v2.0.0 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v2.1.0 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing
