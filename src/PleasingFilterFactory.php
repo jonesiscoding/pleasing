@@ -11,7 +11,7 @@ use Assetic\Filter\FilterInterface;
  * Class PleasingFilterFactory
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v2.1.1 (https://github.com/exactquery/pleasing)
+ * @version Pleasing v2.1.2 (https://github.com/exactquery/pleasing)
  * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing\Assetic\Filter
