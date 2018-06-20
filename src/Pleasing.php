@@ -13,8 +13,8 @@ use Assetic\Asset\AssetCollection;
  * Class Pleasing
  *
  * @author  Aaron M Jones <aaron@jonesiscoding.com>
- * @version Pleasing v2.1.3 (https://github.com/exactquery/pleasing)
- * @license MIT (https://github.com/exactquery/pleasing/blob/master/LICENSE)
+ * @version Pleasing v2.1.4 (https://github.com/jonesiscoding/pleasing)
+ * @license MIT (https://github.com/jonesiscoding/pleasing/blob/master/LICENSE)
  *
  * @package XQ\Pleasing
  */
